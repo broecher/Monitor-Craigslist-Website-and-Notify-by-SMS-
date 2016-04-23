@@ -1,0 +1,5 @@
+Monitor Craigslist Free Website and Notify User by SMS 
+
+This python script runs invisibly in a vbs shell and monitors aCraigslist free website for new items every 10 minutes, and sends an SMS to the user summarizing any new listings. Note this script was written in 2012 and likely cannot interact with Craigslist any longer, it is being published as an example of work only.
+
+The script utilizes the python library sqlite3 and maintains a sql database of items that have already been seen. Listings on Craigslist are often edited and renewed so simply checking the date will not tell you if it is new. The database stores the listing web address which remains constant during renewal and editing. The database contains an SMS-success field where it keeps track of whether it has texted the user yet. This allows the script to be aware of what it has done even if website monitoring or SMS sending fails and it retries when the loop starts over, or if the script is restarted. The script performs database maintenance by deleting records older than 60 days.

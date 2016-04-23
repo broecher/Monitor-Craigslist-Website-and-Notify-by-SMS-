@@ -62,7 +62,7 @@ while 1:
                 except:
                     time.sleep(60)
 
-
+            # Shorten title by removing city names and certain punctuation
             titleA = itemPage.find('<h2>')
             titleB = itemPage.find('</h2>')
             title = itemPage[titleA+4:titleB][0:40].strip()
